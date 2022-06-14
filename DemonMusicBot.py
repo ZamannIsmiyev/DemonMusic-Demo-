@@ -33,8 +33,8 @@ def start(client, message):
         quote=False,
         reply_markup=InlineKeyboardMarkup(
             [[
-                    InlineKeyboardButton('Söhbət Qrupumuz ✅', url='https://t.me/AsoSonZirve'),
-                    InlineKeyboardButton('Playlist 🎵', url=f'https://t.me/{Config.AsoSonZirve}')
+                    InlineKeyboardButton('Söhbət Qrupumuz ✅', url='https://t.me/WerabliAnlar'),
+                    InlineKeyboardButton('Playlist 🎵', url=f'https://t.me/{Config.WerabliAnlar}')
                   ],[
                     InlineKeyboardButton('Sahibim 👨🏻‍💻', url=f'T.me/{Config.ismiyev95}')
                 ]
@@ -52,8 +52,8 @@ def help(client, message):
         quote=False,
         reply_markup=InlineKeyboardMarkup(
             [[
-                    InlineKeyboardButton('Söhbət Qrupumuz ✅', url='https://t.me/AsoSonZirve'),
-                    InlineKeyboardButton('Playlist 🎵', url=f'https://t.me/{Config.AsoSonZirve}')
+                    InlineKeyboardButton('Söhbət Qrupumuz ✅', url='https://t.me/WerabliAnlar'),
+                    InlineKeyboardButton('Playlist 🎵', url=f'https://t.me/{Config.WerabliAnlar}')
                   ],[
                     InlineKeyboardButton('Sahibim 👨🏻‍💻', url=f'T.me/{Config.ismiyev95}')
                 ]
@@ -111,14 +111,14 @@ def a(client, message):
             info_dict = ydl.extract_info(link, download=False)
             audio_file = ydl.prepare_filename(info_dict)
             ydl.process_info(info_dict)
-        rep = f"🎵 Yüklədi [Music Bot](https://t.me/{Config.AsoSonZirve})"
+        rep = f"🎵 Yüklədi [Music Bot](https://t.me/{Config.WerabliAnlar})"
         secmul, dur, dur_arr = 1, 0, duration.split(':')
         for i in range(len(dur_arr)-1, -1, -1):
             dur += (int(dur_arr[i]) * secmul)
             secmul *= 60
-        message.reply_audio(audio_file, caption=rep, parse_mode='md',quote=False, title=title, duration=dur, thumb=thumb_name, performer="@AsoSonZirve")
+        message.reply_audio(audio_file, caption=rep, parse_mode='md',quote=False, title=title, duration=dur, thumb=thumb_name, performer="@WerabliAnlar")
         m.delete()
-        bot.send_audio(chat_id=Config.PLAYLIST_ID, audio=audio_file, caption=rep, performer="@AsoSonZirve", parse_mode='md', title=title, duration=dur, thumb=thumb_name)
+        bot.send_audio(chat_id=Config.PLAYLIST_ID, audio=audio_file, caption=rep, performer="@WerabliAnlar", parse_mode='md', title=title, duration=dur, thumb=thumb_name)
     except Exception as e:
         m.edit('**⚠️ Gözlənilməyən xəta yarandı.**\n**Xahiş edirəm xətanı sahibimə xəbərdar et!**')
         print(e)
